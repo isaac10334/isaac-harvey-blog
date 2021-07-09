@@ -1,0 +1,32 @@
+name: Actions 😎
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build My Project ✨
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install -g @angular/cli
+
+      - name: Build Project
+        run: ng build --prod
+    
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/frontend
