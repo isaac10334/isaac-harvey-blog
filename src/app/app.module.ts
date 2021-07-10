@@ -22,13 +22,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BlogpostComponent } from './blogpost/blogpost.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BlogComponent,
-    NavbarComponent
+    NavbarComponent,
+    BlogpostComponent
   ],
   imports: [
     BrowserModule,
