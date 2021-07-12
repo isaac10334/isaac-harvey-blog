@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BlogpostComponent } from './blogpost/blogpost.component';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    MarkdownModule.forRoot()
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [],
   bootstrap: [AppComponent]
