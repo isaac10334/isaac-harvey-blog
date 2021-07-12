@@ -23,7 +23,7 @@ jobs:
           npm install -g @angular/cli
 
       - name: Build Project
-        run: ng build --prod
+        run: ng build --prod --base-href /isaac-harvey-blog/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
